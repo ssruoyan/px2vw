@@ -1,0 +1,40 @@
+{
+  "name": "px2vw",
+  "version": "1.0.0",
+  "description": "A css processor that transform px to viewport unit.",
+  "main": "index.js",
+  "directories": {
+    "lib": "lib"
+  },
+  "bin": {
+    "px2vw": "./bin/px2vw.js"
+  },
+  "scripts": {
+    "test": "test"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/ssruoyan/px2vw.git"
+  },
+  "keywords": [
+    "css",
+    "style-inline",
+    "processor",
+    "px2vw",
+    "viewport"
+  ],
+  "author": "ssruoyan",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/ssruoyan/px2vw/issues"
+  },
+  "homepage": "https://github.com/ssruoyan/px2vw#readme",
+  "dependencies": {
+    "babel-polyfill": "^6.26.0",
+    "babel-register": "^6.26.0",
+    "commander": "^2.16.0",
+    "css": "^2.2.3",
+    "posthtml": "^0.11.3",
+    "posthtml-parser": "^0.4.1"
+  }
+}

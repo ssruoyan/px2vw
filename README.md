@@ -1,2 +1,2 @@
 # px2vw
-transform px to viewport
+A processor that transform px to viewport unit.

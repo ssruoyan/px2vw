@@ -1,0 +1,25 @@
+#!/usr/bin/env node
+
+var program = require('commander')
+var package = require('../package.json')
+var Px2vw = require('../index')
+var fs = require('fs')
+
+program
+  .version(package.version)
+  .description('pv2rem parse dir.')
+  .command('parse <dir>')
+  .option('-c, --config', 'set px2vw config file. default: .px2vwrc')
+  .option('-w, --vw', 'set vw unit value. default: 375')
+  .action(function(dir, cmd) {
+    const files = fs.readdirSync()
+    const px2vw = new Px2vw()
+
+    files.forEach((path) => {
+      const file = fs.readFileSync(path)
+
+      px2vw.processCss(file.toString())
+    })
+  })
+
+program.parse(process.argv)
