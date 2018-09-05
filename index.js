@@ -1,4 +1,6 @@
 require('babel-register')
 require('babel-polyfill')
 
-module.exports = require('./lib/index')
+const Px2vw = require('./lib/index')
+
+module.exports = Px2vw
