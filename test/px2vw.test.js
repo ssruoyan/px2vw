@@ -1,18 +1,23 @@
 import Px2vw from '../lib'
-import fs from 'fs'
-import path from 'path'
+import assert from 'assert'
 
-const source = fs.readFileSync(path.resolve(__dirname, 'source.css'))
-const sourceHtml = fs.readFileSync(path.resolve(__dirname, 'source.html'))
+describe('shuold work with whiteList set', () => {
+    const px2vw = new Px2vw({
+        whiteList: ['border', 'font-size']
+    })
 
-const px2vw = new Px2vw({
-    ignoreMediaQuery: true,
-    precision: 3,
-    whiteList: ['border']
+    it('should out put right vw css file', () => {
+        const cssText = 'body { font-size: 12px; border: solid 2px red; } p { width: 375px; height: 750px; }'
+        const outputText = px2vw.processCss(cssText)
+
+        assert.equal(outputText, 'body { font-size: 12px; border: solid 2px red; } p { width: 100vw; height: 200vw; }')
+    })
 })
 
-const convertCss = px2vw.processCss(source.toString())
+describe('should work with vw set', () => {
 
-// px2vw.processHtml(sourceHtml.toString())
+})
 
-fs.writeFileSync(path.resolve(__dirname, 'source.vw.css'), convertCss)
+describe('should work with precision set', () => {
+
+})

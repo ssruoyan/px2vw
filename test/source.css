@@ -1,40 +1,32 @@
 @import './reset.css';
 
-
 @keyframes fade {
     from { opacity: 0 }
     to { opacity: 1 }
 }
-
 a {
     color: red;
     text-decoration: none;
 }
-
 #id {
     color: blue;
     font-size: 11px; /* line comment disable */
     animation: fade 200ms ease-in-out;
 }
-
 .id {
     font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
     font-size: 12px;
 }
-
-/* this is a comment line */
 .box {
     width: 100px;
     height: 200px; /* no */
     border: solid 3px black;
     padding: 10px 5px 12px 11px;
 }
-
 @font-face {
     font-family: 'New';
     src: 'https://11111';
 }
-
 @media (max-width: 800px) and (min-width: 200px) {
     .box {
         width: 600px;
